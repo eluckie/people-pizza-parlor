@@ -4,6 +4,7 @@ function Pizza() {
   this.sauce = undefined;
   this.toppings = [];
   this.toppingsCost = 0;
+  this.totalCost = 0;
 }
 
 Pizza.prototype.chooseSize = function(sizeChoice) {
@@ -28,6 +29,7 @@ Pizza.prototype.addToppings = function(topping) {
   this.toppingsCost += 2;
 }
 
-Pizza.prototype.calculateToppingsCost = function() {
-  this.toppings.forEach()
+Pizza.prototype.calculateTotalCost = function() {
+  let total = this.sizePrice + this.toppingsCost
+  return total;
 }
