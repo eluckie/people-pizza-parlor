@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <title>Pizza Parlor</title>
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <script src="js/scripts.js"></script>
+</head>
+<body>
+  <h1>Pizza Parlor</h1>
+  <h3>Customize your pizza below</h3>
+  <form id="customize-pizza">
+    <label>Size: </label>
+    <select id="size"> 
+      <option value="small">Small - 10"</option>
+      <option value="medium">Medium - 12"</option>
+      <option value="large">Large - 14"</option>
+      <option value="family">Family - 16"</option>
+    </select>
+    <br><br>
+    <label>Sauce: </label>
+    <select id="size"> 
+      <option value="none">No sauce</option>
+      <option value="light">Light sauce</option>
+      <option value="regular">Regular sauce</option>
+      <option value="extra">Extra sauce</option>
+    </select>
+    <h4>Toppings (+$2 per topping)</h4>
+    <p>Meats</p>
+    <label>
+      <input type="checkbox" name="topping-option" value="pepperoni">
+      Pepperoni
+    </label><br>
+    <input type="checkbox" name="topping-option" value="ham">
+      Ham
+    </label><br>
+    <input type="checkbox" name="topping-option" value="italian-sausage">
+      Italian Sausage
+    </label><br>
+    <input type="checkbox" name="topping-option" value="bacon">
+      Bacon
+    </label><br>
+    <input type="checkbox" name="topping-option" value="chicken">
+      Chicken
+    </label><br>
+    <p>Non-meats</p>
+    <input type="checkbox" name="topping-option" value="pineapple">
+      Pineapple
+    </label><br>
+    <input type="checkbox" name="topping-option" value="onions">
+      Onions
+    </label><br>
+    <input type="checkbox" name="topping-option" value="olives">
+      Olives
+    </label><br>
+    <input type="checkbox" name="topping-option" value="mushrooms">
+      Mushrooms
+    </label><br>
+    <input type="checkbox" name="topping-option" value="jalapenos">
+      Jalapenos
+    </label><br><br>
+    <button type="submit">Calculate Total</button>
+  </form>
+</body>
+</html>
