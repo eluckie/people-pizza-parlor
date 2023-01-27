@@ -4,6 +4,10 @@ function Pizza(size, sauce, toppings) {
   this.toppings = toppings;
 }
 
+Pizza.prototype.chooseSize = function(sizeChoice) {
+  this.size = sizeChoice;
+}
+
 Pizza.prototype.addSauce = function(sauceChoice) {
   this.sauce = sauceChoice;
 }
