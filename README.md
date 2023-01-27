@@ -35,6 +35,12 @@ myPizza.addToppings("pepperoni");
 Expected Output: 
 Pizza { size: undefined, sauce: undefined, toppings: "pepperoni" }
 
+Test 2: "It should add multiple specified toppings to pizza object in the correct property"
+Code:
+let myPizza = new Pizza();
+myPizza.addToppings("pepperoni", "ham");
+Expected Output:
+Pizza { size: undefined, sauce: undefined, toppings: ["pepperoni", "ham"] }
 
 ## Setup/Installation Requirements
 
