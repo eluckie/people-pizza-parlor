@@ -35,6 +35,13 @@ myPizza.sizeChoice("medium");
 Expected Output:
 Pizza { size: "medium", sauce: undefined, toppings: undefined }
 
+Test 2: "It should add the price for the specified size to pizza object in the correct property"
+Code:
+let myPizza = new Pizza();
+myPizza.sizeChoice("medium");
+Expected Output:
+Pizza { size: "medium", size price: "$15", sauce: undefined, toppings: undefined }
+
 Describe Pizza.prototype.addSauce();
 
 Test 1: "It should add the specified sauce choice to pizza object in the correct property"
