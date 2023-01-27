@@ -99,7 +99,7 @@ Expeected Output: 17
 
 ## Known Bugs
 
-* If submitting more than one pizza selection, orders are smushed together rather than replaced or set up nicely after each other.
+* No known bugs.
 
 ## License
 

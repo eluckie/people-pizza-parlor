@@ -34,8 +34,6 @@ Pizza.prototype.calculateTotalCost = function() {
 }
 
 
-// ui logic
-
 function handleFormSubmission(event) {
   event.preventDefault();
   const pizza = new Pizza();
@@ -53,7 +51,7 @@ function handleFormSubmission(event) {
   });
 
   const div = document.getElementById("your-pizza");
-  const displayTotal = document.createElement("p");
+  const displayTotal = document.createElement("h3");
   const yourSize = document.createElement("p");
   const yourSauce = document.createElement("p");
   const total = pizza.calculateTotalCost();
@@ -70,6 +68,13 @@ function handleFormSubmission(event) {
   document.getElementById("customize-pizza").reset();
 }
 
+function resetSelections() {
+  document.getElementById("customize-pizza").reset();
+  document.getElementById("your-pizza").innerText = "";
+  document.getElementById("your-pizza").setAttribute("class", "hidden");
+}
+
 window.addEventListener("load", function() {
 document.querySelector("form#customize-pizza").addEventListener("submit", handleFormSubmission);
+document.getElementById("reset-button").addEventListener("click", resetSelections);
 });
