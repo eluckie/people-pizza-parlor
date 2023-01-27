@@ -26,6 +26,16 @@ Code: const myPizza = new Pizza("small", "light", ["pepperoni", "ham"]);
 Expected Output:
 Pizza { size: "small", sauce: "light", toppings: ["pepperoni", "ham"] }
 
+Describe Pizza.prototype.addToppings();
+
+Test 1: "It should add the specified topping to pizza object in the correct property"
+Code: 
+let myPizza = new Pizza();
+myPizza.addToppings("pepperoni");
+Expected Output: 
+Pizza { size: undefined, sauce: undefined, toppings: "pepperoni" }
+
+
 ## Setup/Installation Requirements
 
 * Clone this repository to your desktop
