@@ -38,7 +38,7 @@ Pizza.prototype.calculateTotalCost = function() {
 
 function handleFormSubmission(event) {
   event.preventDefault();
-  let pizza = new Pizza();
+  const pizza = new Pizza();
   const size = document.getElementById("size").value;
   const sauce = document.getElementById("sauce").value;
   pizza.chooseSize(size);
@@ -49,19 +49,19 @@ function handleFormSubmission(event) {
   toppingSelectionsArray.forEach(function(topping) {
     pizza.addToppings(topping);
     const yourToppings = document.getElementById("your-pizza-toppings");
-    yourToppings.append(topping.value);
+    yourToppings.append(topping.value + ". ");
   });
 
-  let total = pizza.calculateTotalCost();
+
   const div = document.getElementById("your-pizza");
   const p = document.createElement("p");
   const yourSize = document.getElementById("your-pizza-size");
   const yourSauce = document.getElementById("your-pizza-sauce");
+
+  div.removeAttribute("class");
+  div.append(p);
   yourSize.append("Size: " + pizza.size);
   yourSauce.append("Sauce: " + pizza.sauce);
-  p.append("Your total will be $" + total);
-  div.append(p);
-  div.removeAttribute("class");
   console.log(pizza);
 }
 
