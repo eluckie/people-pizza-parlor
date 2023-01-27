@@ -8,13 +8,13 @@ function Pizza() {
 
 Pizza.prototype.chooseSize = function(sizeChoice) {
   this.size = sizeChoice;
-  if (this.size === "Small") {
+  if (this.size === "Child") {
     this.sizePrice = 10;
-  } else if (this.size === "Medium") {
+  } else if (this.size === "Teenager") {
     this.sizePrice = 15;
-  } else if (this.size === "Large") {
+  } else if (this.size === "Adult") {
     this.sizePrice = 20;
-  } else if (this.size === "Family") {
+  } else if (this.size === "Grandparents") {
     this.sizePrice = 25;
   }
 }
@@ -57,7 +57,7 @@ function handleFormSubmission(event) {
   const total = pizza.calculateTotalCost();
 
   yourSize.append("Size: " + pizza.size);
-  yourSauce.append("Sauce: " + pizza.sauce);
+  yourSauce.append("Blood: " + pizza.sauce);
   yourToppings.prepend("Toppings: ");
   displayTotal.append("Your total is $" + total);
   div.append(yourSize);
