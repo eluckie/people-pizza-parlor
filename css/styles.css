@@ -1,3 +1,17 @@
 .hidden {
   display:none;
 }
+
+img {
+  width:160px;
+  margin:auto;
+}
+
+h1 {
+  font-family:chalkduster;
+  font-size:70px;
+}
+
+h3 {
+  color:red;
+}
