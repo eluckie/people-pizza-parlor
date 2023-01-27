@@ -8,13 +8,13 @@ function Pizza() {
 
 Pizza.prototype.chooseSize = function(sizeChoice) {
   this.size = sizeChoice;
-  if (this.size === "small") {
+  if (this.size === "Small") {
     this.sizePrice = 10;
-  } else if (this.size === "medium") {
+  } else if (this.size === "Medium") {
     this.sizePrice = 15;
-  } else if (this.size === "large") {
+  } else if (this.size === "Large") {
     this.sizePrice = 20;
-  } else if (this.size === "family") {
+  } else if (this.size === "Family") {
     this.sizePrice = 25;
   }
 }
@@ -52,16 +52,18 @@ function handleFormSubmission(event) {
     yourToppings.append(topping.value + ". ");
   });
 
-
   const div = document.getElementById("your-pizza");
   const p = document.createElement("p");
   const yourSize = document.getElementById("your-pizza-size");
   const yourSauce = document.getElementById("your-pizza-sauce");
+  const total = pizza.calculateTotalCost();
 
   div.removeAttribute("class");
-  div.append(p);
   yourSize.append("Size: " + pizza.size);
   yourSauce.append("Sauce: " + pizza.sauce);
+  p.append("Your total will be $" + total);
+  div.append(p);
+  document.getElementById("customize-pizza").reset();
   console.log(pizza);
 }
 
