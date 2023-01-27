@@ -32,6 +32,7 @@ Test 1: "It should add the specified size choice to pizza object in the correct 
 Code:
 let myPizza = new Pizza();
 myPizza.sizeChoice("medium");
+myPizza;
 Expected Output:
 Pizza { size: "medium", sauce: undefined, toppings: undefined }
 
@@ -39,8 +40,9 @@ Test 2: "It should add the price for the specified size to pizza object in the c
 Code:
 let myPizza = new Pizza();
 myPizza.sizeChoice("medium");
+myPizza;
 Expected Output:
-Pizza { size: "medium", size price: "$15", sauce: undefined, toppings: undefined }
+Pizza { size: "medium", size price: 15, sauce: undefined, toppings: undefined }
 
 Describe Pizza.prototype.addSauce();
 
@@ -48,6 +50,7 @@ Test 1: "It should add the specified sauce choice to pizza object in the correct
 Code:
 let myPizza = new Pizza();
 myPizza.addSauce("light");
+myPizza;
 Expected Output:
 Pizza { size: undefined, sauce: "light", toppings: undefined }
 
@@ -57,15 +60,26 @@ Test 1: "It should add the specified topping to pizza object in the correct prop
 Code: 
 let myPizza = new Pizza();
 myPizza.addToppings("pepperoni");
+myPizza;
 Expected Output: 
 Pizza { size: undefined, sauce: undefined, toppings: "pepperoni" }
 
 Test 2: "It should add multiple specified toppings to pizza object in the correct property"
 Code:
 let myPizza = new Pizza();
-myPizza.addToppings("pepperoni", "ham");
+myPizza.addToppings("pepperoni");
+myPizza.addToppings("ham");
+myPizza;
 Expected Output:
 Pizza { size: undefined, sauce: undefined, toppings: ["pepperoni", "ham"] }
+
+Test 3: "It should update the toppings cost property by 2 if there is one topping on the pizza"
+Code:
+let myPizza = new Pizza();
+myPizza.addToppings("pepperoni");
+myPizza;
+Expected Output:
+Pizza { size: undefined, sizePrice: 0, sauce: undefined, toppings: ["pepperoni"], toppingsPrice: 2 }
 
 ## Setup/Installation Requirements
 
