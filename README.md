@@ -2,7 +2,7 @@
 
 #### By E. Luckie ☀️
 
-#### This webpage acts as a faux pizza parlor where users are able to select a pizza size and customize their toppings as desired, as well as see the price for their selections.
+#### This webpage acts as a faux pizza parlor where users are able to select a pizza size and customize their toppings as desired, then see the price.
 
 ## Technologies Used
 
@@ -14,7 +14,7 @@
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+This webpage is intended to demonstrate proper utilization of constructors and prototypes with JavaScript. Users are able to complete the form to customize their pizza by choosing a size, sauce amount, and desired toppings. When they click the "calculate total" button, their full selections are displayed back to them as well as the total cost of their pizza.
 
 [Click here](https://eluckie.github.io/pizza-parlor/) to view the live version of this Pizza Parlor webpage.
 
@@ -99,8 +99,7 @@ Expeected Output: 17
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* If submitting more than one pizza selection, orders are smushed together rather than replaced or set up nicely after each other.
 
 ## License
 
