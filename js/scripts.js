@@ -4,7 +4,6 @@ function Pizza() {
   this.sauce = undefined;
   this.toppings = [];
   this.toppingsCost = 0;
-  this.totalCost = 0;
 }
 
 Pizza.prototype.chooseSize = function(sizeChoice) {
@@ -33,3 +32,20 @@ Pizza.prototype.calculateTotalCost = function() {
   let total = this.sizePrice + this.toppingsCost
   return total;
 }
+
+
+// ui logic
+
+function handleFormSubmission(event) {
+  event.preventDefault();
+  let pizza = new Pizza();
+
+  const toppingSelections = document.querySelectorAll("input[name=topping-option]:checked");
+  this.toppings = Array.from(toppingSelections);
+  console.log(pizza);
+}
+
+
+window.addEventListener("load", function() {
+document.querySelector("form#customize-pizza").addEventListener("submit", handleFormSubmission);
+});
