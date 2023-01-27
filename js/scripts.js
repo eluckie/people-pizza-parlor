@@ -22,9 +22,6 @@ Pizza.prototype.addSauce = function(sauceChoice) {
   this.sauce = sauceChoice;
 }
 
-Pizza.prototype.addToppings = function(topping1, topping2) {
-  let allToppings = [];
-  allToppings.push(topping1);
-  allToppings.push(topping2);
-  this.toppings = allToppings;
+Pizza.prototype.addToppings = function(topping) {
+  this.toppings.push(topping);
 }
