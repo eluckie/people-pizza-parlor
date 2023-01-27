@@ -81,6 +81,16 @@ myPizza;
 Expected Output:
 Pizza { size: undefined, sizePrice: 0, sauce: undefined, toppings: ["pepperoni"], toppingsPrice: 2 }
 
+Describe Pizza.prototype.calculateTotalCost()
+
+Test 1: "It should add the size cost to the toppings cost and return the total cost of the pizza object"
+Code:
+let myPizza = new Pizza();
+myPizza.chooseSize("medium");
+myPizza.addToppings("pepperoni");
+myPizza.calculateTotalCost();
+Expeected Output: 17
+
 ## Setup/Installation Requirements
 
 * Clone this repository to your desktop
