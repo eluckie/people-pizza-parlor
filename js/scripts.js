@@ -46,25 +46,28 @@ function handleFormSubmission(event) {
 
   const toppingSelections = document.querySelectorAll("input[name=topping-option]:checked");
   const toppingSelectionsArray = Array.from(toppingSelections);
+  const yourToppings = document.createElement("p");
   toppingSelectionsArray.forEach(function(topping) {
     pizza.addToppings(topping);
-    const yourToppings = document.getElementById("your-pizza-toppings");
     yourToppings.append(topping.value + ". ");
   });
 
   const div = document.getElementById("your-pizza");
-  const p = document.createElement("p");
-  const yourSize = document.getElementById("your-pizza-size");
-  const yourSauce = document.getElementById("your-pizza-sauce");
+  const displayTotal = document.createElement("p");
+  const yourSize = document.createElement("p");
+  const yourSauce = document.createElement("p");
   const total = pizza.calculateTotalCost();
 
-  div.removeAttribute("class");
   yourSize.append("Size: " + pizza.size);
   yourSauce.append("Sauce: " + pizza.sauce);
-  p.append("Your total will be $" + total);
-  div.append(p);
+  yourToppings.prepend("Toppings: ");
+  displayTotal.append("Your total is $" + total);
+  div.append(yourSize);
+  div.append(yourSauce);
+  div.append(yourToppings);
+  div.append(displayTotal);
+  div.removeAttribute("class");
   document.getElementById("customize-pizza").reset();
-  console.log(pizza);
 }
 
 window.addEventListener("load", function() {
