@@ -39,12 +39,20 @@ Pizza.prototype.calculateTotalCost = function() {
 function handleFormSubmission(event) {
   event.preventDefault();
   let pizza = new Pizza();
-
+  const size = document.getElementById("size").value;
+  const sauce = document.getElementById("sauce").value;
   const toppingSelections = document.querySelectorAll("input[name=topping-option]:checked");
-  this.toppings = Array.from(toppingSelections);
-  console.log(pizza);
-}
+  const toppingSelectionsArray = Array.from(toppingSelections);
 
+  toppingSelectionsArray.forEach(function(topping) {
+    pizza.addToppings(topping);
+  });
+  pizza.chooseSize(size);
+  pizza.addSauce(sauce);
+  let total = pizza.calculateTotalCost();
+  console.log(pizza);
+  console.log(total);
+}
 
 window.addEventListener("load", function() {
 document.querySelector("form#customize-pizza").addEventListener("submit", handleFormSubmission);
