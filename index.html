@@ -11,54 +11,61 @@
   <form id="customize-pizza">
     <label>Size: </label>
     <select id="size"> 
-      <option value="small">Small - 10"</option>
-      <option value="medium">Medium - 12"</option>
-      <option value="large">Large - 14"</option>
-      <option value="family">Family - 16"</option>
+      <option value="Small">Small - 10"</option>
+      <option value="Medium">Medium - 12"</option>
+      <option value="Large">Large - 14"</option>
+      <option value="Family">Family - 16"</option>
     </select>
     <br><br>
     <label>Sauce: </label>
     <select id="sauce"> 
-      <option value="none">No sauce</option>
-      <option value="light">Light sauce</option>
-      <option value="regular">Regular sauce</option>
-      <option value="extra">Extra sauce</option>
+      <option value="None">No sauce</option>
+      <option value="Light">Light sauce</option>
+      <option value="Regular">Regular sauce</option>
+      <option value="Extra">Extra sauce</option>
     </select>
     <h4>Toppings (+$2 per topping)</h4>
     <p>Meats</p>
     <label>
-      <input type="checkbox" name="topping-option" value="pepperoni">
+      <input type="checkbox" name="topping-option" value="Pepperoni">
       Pepperoni
     </label><br>
-    <input type="checkbox" name="topping-option" value="ham">
+    <input type="checkbox" name="topping-option" value="Ham">
       Ham
     </label><br>
-    <input type="checkbox" name="topping-option" value="italian-sausage">
+    <input type="checkbox" name="topping-option" value="Italian Sausage">
       Italian Sausage
     </label><br>
-    <input type="checkbox" name="topping-option" value="bacon">
+    <input type="checkbox" name="topping-option" value="Bacon">
       Bacon
     </label><br>
-    <input type="checkbox" name="topping-option" value="chicken">
+    <input type="checkbox" name="topping-option" value="Chicken">
       Chicken
     </label><br>
     <p>Non-meats</p>
-    <input type="checkbox" name="topping-option" value="pineapple">
+    <input type="checkbox" name="topping-option" value="Pineapple">
       Pineapple
     </label><br>
-    <input type="checkbox" name="topping-option" value="onions">
+    <input type="checkbox" name="topping-option" value="Onions">
       Onions
     </label><br>
-    <input type="checkbox" name="topping-option" value="olives">
+    <input type="checkbox" name="topping-option" value="Olives">
       Olives
     </label><br>
-    <input type="checkbox" name="topping-option" value="mushrooms">
+    <input type="checkbox" name="topping-option" value="Mushrooms">
       Mushrooms
     </label><br>
-    <input type="checkbox" name="topping-option" value="jalapenos">
+    <input type="checkbox" name="topping-option" value="Jalapenos">
       Jalapenos
     </label><br><br>
     <button type="submit">Calculate Total</button>
   </form>
+
+  <div id="your-pizza" class="hidden">
+    <h3>Your pizza selections:</h3>
+    <p id="your-pizza-size"></p>
+    <p id="your-pizza-sauce"></p>
+    <p id="your-pizza-toppings"></p>
+  </div>
 </body>
 </html>

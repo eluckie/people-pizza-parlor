@@ -41,17 +41,28 @@ function handleFormSubmission(event) {
   let pizza = new Pizza();
   const size = document.getElementById("size").value;
   const sauce = document.getElementById("sauce").value;
-  const toppingSelections = document.querySelectorAll("input[name=topping-option]:checked");
-  const toppingSelectionsArray = Array.from(toppingSelections);
-
-  toppingSelectionsArray.forEach(function(topping) {
-    pizza.addToppings(topping);
-  });
   pizza.chooseSize(size);
   pizza.addSauce(sauce);
+
+  const toppingSelections = document.querySelectorAll("input[name=topping-option]:checked");
+  const toppingSelectionsArray = Array.from(toppingSelections);
+  toppingSelectionsArray.forEach(function(topping) {
+    pizza.addToppings(topping);
+    const yourToppings = document.getElementById("your-pizza-toppings");
+    yourToppings.append(topping.value);
+  });
+
   let total = pizza.calculateTotalCost();
+  const div = document.getElementById("your-pizza");
+  const p = document.createElement("p");
+  const yourSize = document.getElementById("your-pizza-size");
+  const yourSauce = document.getElementById("your-pizza-sauce");
+  yourSize.append("Size: " + pizza.size);
+  yourSauce.append("Sauce: " + pizza.sauce);
+  p.append("Your total will be $" + total);
+  div.append(p);
+  div.removeAttribute("class");
   console.log(pizza);
-  console.log(total);
 }
 
 window.addEventListener("load", function() {
