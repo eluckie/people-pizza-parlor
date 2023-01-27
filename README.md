@@ -26,6 +26,15 @@ Code: const myPizza = new Pizza("small", "light", ["pepperoni", "ham"]);
 Expected Output:
 Pizza { size: "small", sauce: "light", toppings: ["pepperoni", "ham"] }
 
+Describe Pizza.prototype.chooseSize();
+
+Test 1: "It should add the specified size choice to pizza object in the correct property"
+Code:
+let myPizza = new Pizza();
+myPizza.sizeChoice("medium");
+Expected Output:
+Pizza { size: "medium", sauce: undefined, toppings: undefined }
+
 Describe Pizza.prototype.addSauce();
 
 Test 1: "It should add the specified sauce choice to pizza object in the correct property"
@@ -33,7 +42,7 @@ Code:
 let myPizza = new Pizza();
 myPizza.addSauce("light");
 Expected Output:
-Pizza { size: undefined, sauce: light, toppings: undefined }
+Pizza { size: undefined, sauce: "light", toppings: undefined }
 
 Describe Pizza.prototype.addToppings();
 
