@@ -56,8 +56,10 @@ Pizza.prototype.calculateTotalCost = function() {
   return total;
 };
 
-function handleFormSubmission(event) {
-  event.preventDefault();
+// global cart object to hold pizzas
+const cart = new ShoppingCart();
+
+function calculatePizzaCost() {
   const pizza = new Pizza();
   const size = document.getElementById("size").value;
   const sauce = document.getElementById("blood").value;
@@ -89,7 +91,26 @@ function handleFormSubmission(event) {
   div.append(displayTotal);
   div.removeAttribute("class");
   addToCartButton.removeAttribute("class");
-  document.getElementById("customize-pizza").reset();
+}
+
+function addPizzaToCart() {
+  const pizza = new Pizza();
+  const size = document.getElementById("size").value;
+  const sauce = document.getElementById("blood").value;
+  pizza.chooseSize(size);
+  pizza.addSauce(sauce);
+
+  const toppingSelections = document.querySelectorAll("input[name=topping-option]:checked");
+  const toppingSelectionsArray = Array.from(toppingSelections);
+  const yourToppings = document.createElement("p");
+  toppingSelectionsArray.forEach(function(topping) {
+    pizza.addToppings(topping);
+    yourToppings.append(topping.value + ". ");
+  });
+  const total = pizza.calculateTotalCost();
+  cart.addToCart(pizza);
+  resetSelections();
+  console.log(cart);
 }
 
 function resetSelections() {
@@ -100,6 +121,7 @@ function resetSelections() {
 }
 
 window.addEventListener("load", function() {
-document.querySelector("form#customize-pizza").addEventListener("submit", handleFormSubmission);
+document.getElementById("calculate-button").addEventListener("click", calculatePizzaCost);
 document.getElementById("reset-button").addEventListener("click", resetSelections);
+document.getElementById("add-to-cart-button").addEventListener("click", addPizzaToCart);
 });
