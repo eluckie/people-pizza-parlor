@@ -54,16 +54,18 @@ function handleFormSubmission(event) {
   const yourSize = document.createElement("p");
   const yourSauce = document.createElement("p");
   const total = pizza.calculateTotalCost();
+  const addToCartButton = document.getElementById("add-to-cart");
 
   yourSize.append("Size: " + pizza.size);
   yourSauce.append("Blood: " + pizza.sauce);
   yourToppings.prepend("Toppings: ");
-  displayTotal.append("Your total is $" + total);
+  displayTotal.append("The total is $" + total);
   div.append(yourSize);
   div.append(yourSauce);
   div.append(yourToppings);
   div.append(displayTotal);
   div.removeAttribute("class");
+  addToCartButton.removeAttribute("class");
   document.getElementById("customize-pizza").reset();
 }
 
@@ -71,6 +73,7 @@ function resetSelections() {
   document.getElementById("customize-pizza").reset();
   document.getElementById("your-pizza").innerText = "";
   document.getElementById("your-pizza").setAttribute("class", "hidden");
+  document.getElementById("add-to-cart").setAttribute("class", "hidden");
 }
 
 window.addEventListener("load", function() {

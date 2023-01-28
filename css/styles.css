@@ -79,3 +79,11 @@ h3 {
 #blood {
   font-family:chalkduster;
 }
+
+#add-to-cart-button {
+  font-family:chalkduster;
+  background-color:darkred;
+  color:white;
+  display:block;
+  margin:auto;
+}
