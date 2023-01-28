@@ -118,6 +118,17 @@ myCart.addToCart(myPizza);
 Expected Output:
 ShoppingCart { pizzas: { ID: myPizza } }
 
+Describe ShoppingCart.prototype.deletePizza()
+
+Test 1: "It should delete the specified pizza object from the shopping cart object"
+Code:
+const myPizza = new Pizza();
+const myCart = new Cart();
+myCart.addToCart(myPizza1);
+myCart.deletePizza(1);
+Expected Output:
+ShoppingCart { pizzas: {} }
+
 
 ## Setup/Installation Requirements
 
