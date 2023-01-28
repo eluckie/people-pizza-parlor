@@ -13,6 +13,14 @@ ShoppingCart.prototype.assignId = function() {
   return this.currentId;
 };
 
+ShoppingCart.prototype.deletePizza = function(id) {
+  if (this.pizzas[id] === undefined) {
+    return false;
+  }
+  delete this.pizzas[id];
+  return true;
+}
+
 function Pizza() {
   this.size = undefined;
   this.sizePrice = 0;
