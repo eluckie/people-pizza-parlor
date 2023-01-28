@@ -91,6 +91,13 @@ myPizza.addToppings("pepperoni");
 myPizza.calculateTotalCost();
 Expeected Output: 17
 
+Describe ShoppingCart()
+
+Test 1: "It should return an empty shopping cart object"
+Code: const myCart = new ShoppingCart();
+Expected Output:
+ShoppingCart { }
+
 ## Setup/Installation Requirements
 
 * Clone this repository to your desktop
