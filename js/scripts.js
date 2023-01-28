@@ -1,10 +1,17 @@
 function ShoppingCart() {
   this.pizzas = {};
+  this.currentId = 0;
 }
 
 ShoppingCart.prototype.addToCart = function(pizza) {
-  this.pizzas[pizza.size] = pizza;
-}
+  pizza.id = this.assignId();
+  this.pizzas[pizza.id] = pizza;
+};
+
+ShoppingCart.prototype.assignId = function() {
+  this.currentId += 1;
+  return this.currentId;
+};
 
 function Pizza() {
   this.size = undefined;
@@ -25,21 +32,21 @@ Pizza.prototype.chooseSize = function(sizeChoice) {
   } else if (this.size === "Grandparents") {
     this.sizePrice = 25;
   }
-}
+};
 
 Pizza.prototype.addSauce = function(sauceChoice) {
   this.sauce = sauceChoice;
-}
+};
 
 Pizza.prototype.addToppings = function(topping) {
   this.toppings.push(topping);
   this.toppingsCost += 2;
-}
+};
 
 Pizza.prototype.calculateTotalCost = function() {
   let total = this.sizePrice + this.toppingsCost
   return total;
-}
+};
 
 function handleFormSubmission(event) {
   event.preventDefault();
