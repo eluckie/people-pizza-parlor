@@ -38,7 +38,7 @@ function handleFormSubmission(event) {
   event.preventDefault();
   const pizza = new Pizza();
   const size = document.getElementById("size").value;
-  const sauce = document.getElementById("sauce").value;
+  const sauce = document.getElementById("blood").value;
   pizza.chooseSize(size);
   pizza.addSauce(sauce);
 

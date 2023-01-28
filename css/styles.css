@@ -3,18 +3,16 @@
 }
 
 img {
-  width:160px;
+  width:800px;
+  display:block;
   margin:auto;
 }
 
 h1 {
+  text-align:center;
   font-family:chalkduster;
   font-size:70px;
   background-image:url("https://media.istockphoto.com/id/493316308/photo/splattered-blood-drops-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=3oWdOkNauhwInn2fcliuQX6cFE60r3nSkdZdP9zBoK4=");
-}
-
-h3 {
-  color:red;
 }
 
 body {
@@ -23,8 +21,23 @@ body {
 
 form {
   background-image:url("https://media.istockphoto.com/id/493112318/photo/scary-zombie-hand-with-dirty-fingers-isolated-on-white.jpg?s=612x612&w=0&k=20&c=rug6zd4qkCf-4NNEwuNASRUW_i7wtWPlV1NwxWj53K8=");
-  background-position: right;
-  background-repeat: no-repeat;
+  background-position:right;
+  background-repeat:no-repeat;
+}
+
+h3 {
+  color:red;
+  text-align:center;
+}
+
+#pizza-selections {
+  color:darkred;
+  text-align:left;
+}
+
+#pizza-sizes {
+  margin:auto;
+  padding:20px;
 }
 
 #size-label {
@@ -50,4 +63,24 @@ form {
 #non-meats-label {
   color:red;
   font-weight:bold;
+}
+
+#submit-button {
+  font-family:chalkduster;
+  background-color:darkred;
+  color:white;
+}
+
+#reset-button {
+  font-family:chalkduster;
+  background-color:black;
+  color:darkred;
+}
+
+#size {
+  font-family:chalkduster;
+}
+
+#blood {
+  font-family:chalkduster;
 }

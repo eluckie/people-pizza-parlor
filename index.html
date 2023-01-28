@@ -7,11 +7,8 @@
 </head>
 <body>
   <h1>People Pizza</h1>
-  <img src="img/child-size.png" alt="empty red circle icon that says child - 10 inches, $10">
-  <img src="img/teenage-size.png" alt="empty red circle icon that says teenager - 12 inches, $15">
-  <img src="img/adult-size.png" alt="empty red circle icon that says adult - 14 inches, $20">
-  <img src="img/grandparent-size.png" alt="empty red circle icon that says grandparents - 16 inches, $25">
-  <h3>Choose your size and customize your pizza below</h3>
+  <h3 id="choose-size">Choose your size and customize your pizza below</h3>
+  <img src="img/sample-sizes.jpg" alt="4 red circles with text inside sharing each pizza size name, size in inches, and cost. Child is 10 inches & $10, teenager is 12 inches & $15, adult is 14 inches & $20, grandparents is 16 inches & $25">
   <form id="customize-pizza">
     <label id="size-label">Size: </label>
     <select id="size"> 
@@ -22,7 +19,7 @@
     </select>
     <br><br>
     <label id="blood-label">Blood: </label>
-    <select id="sauce"> 
+    <select id="blood"> 
       <option value="None">No blood</option>
       <option value="Light">Light blood</option>
       <option value="Regular">Regular bloody</option>
@@ -63,12 +60,12 @@
       Foot Shavings
     </label>
     <br><br>
-    <button type="submit">Calculate Total</button>
+    <button type="submit" id="submit-button">Calculate Total</button>
     <button type="button" id="reset-button">Start Over</button>
   </form>
 
   <div id="your-pizza" class="hidden">
-    <h3>Your pizza selections:</h3>
+    <h3 id="pizza-selections">Your pizza selections:</h4>
   </div>
 </body>
 </html>
