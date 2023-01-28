@@ -98,6 +98,17 @@ Code: const myCart = new ShoppingCart();
 Expected Output:
 ShoppingCart { }
 
+Describe ShoppingCart.prototype.addToCart()
+
+Test1: "It should add the specified pizza object to the shopping cart object"
+Code:
+const myPizza = new Pizza();
+const myCart = new Cart();
+myCart.addToCart(myPizza);
+Expected Output:
+ShoppingCart { pizzas: { myPizza } }
+
+
 ## Setup/Installation Requirements
 
 * Clone this repository to your desktop
