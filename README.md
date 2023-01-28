@@ -1,4 +1,4 @@
-# Pizza Parlor
+# People Pizza Parlor
 
 #### By E. Luckie ☀️
 
@@ -14,7 +14,7 @@
 
 ## Description
 
-This zombie-themed webpage is intended to demonstrate proper utilization of constructors and prototypes with JavaScript. Users are able to complete the form to customize their pizza by choosing a size, sauce amount, and desired toppings. When they click the "calculate total" button, their full selections are displayed back to them as well as the total cost of their pizza.
+This zombie-themed webpage is intended to demonstrate proper utilization of constructors and prototypes with JavaScript. Users are able to complete the form to customize their pizza by choosing a size, sauce amount, and desired toppings. When they click the "calculate total" button, their full selections are displayed back to them as well as the total cost of their pizza. They are then able to either create another pizza and submit again, or click the "start over" button to clear their screen and form.
 
 [Click here](https://eluckie.github.io/people-pizza-parlor/) to view the live version of this People Pizza Parlor webpage.
 
