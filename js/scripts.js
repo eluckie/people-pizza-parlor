@@ -1,3 +1,7 @@
+function ShoppingCart() {
+  this.pizzas = {};
+}
+
 function Pizza() {
   this.size = undefined;
   this.sizePrice = 0;
@@ -59,7 +63,7 @@ function handleFormSubmission(event) {
   yourSize.append("Size: " + pizza.size);
   yourSauce.append("Blood: " + pizza.sauce);
   yourToppings.prepend("Toppings: ");
-  displayTotal.append("The total is $" + total);
+  displayTotal.append("This pizza is $" + total);
   div.append(yourSize);
   div.append(yourSauce);
   div.append(yourToppings);
