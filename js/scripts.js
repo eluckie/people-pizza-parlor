@@ -2,6 +2,10 @@ function ShoppingCart() {
   this.pizzas = {};
 }
 
+ShoppingCart.prototype.addToCart = function(pizza) {
+  this.pizzas[pizza.size] = pizza;
+}
+
 function Pizza() {
   this.size = undefined;
   this.sizePrice = 0;
