@@ -100,13 +100,23 @@ ShoppingCart { }
 
 Describe ShoppingCart.prototype.addToCart()
 
-Test1: "It should add the specified pizza object to the shopping cart object"
+Test 1: "It should add the specified pizza object to the shopping cart object"
 Code:
 const myPizza = new Pizza();
 const myCart = new Cart();
 myCart.addToCart(myPizza);
 Expected Output:
-ShoppingCart { pizzas: { myPizza } }
+ShoppingCart { pizzas: { size: myPizza } }
+
+Describe ShoppingCart.prototype.assignId()
+
+Test 1: "It should assign a unique ID to each pizza object that is added to the shopping cart object"
+Code:
+const myPizza = new Pizza();
+const myCart = new Cart();
+myCart.addToCart(myPizza);
+Expected Output:
+ShoppingCart { pizzas: { ID: myPizza } }
 
 
 ## Setup/Installation Requirements
