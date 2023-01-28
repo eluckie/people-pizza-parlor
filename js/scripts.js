@@ -33,7 +33,6 @@ Pizza.prototype.calculateTotalCost = function() {
   return total;
 }
 
-
 function handleFormSubmission(event) {
   event.preventDefault();
   const pizza = new Pizza();

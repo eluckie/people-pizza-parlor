@@ -14,9 +14,9 @@
 
 ## Description
 
-This webpage is intended to demonstrate proper utilization of constructors and prototypes with JavaScript. Users are able to complete the form to customize their pizza by choosing a size, sauce amount, and desired toppings. When they click the "calculate total" button, their full selections are displayed back to them as well as the total cost of their pizza.
+This zombie-themed webpage is intended to demonstrate proper utilization of constructors and prototypes with JavaScript. Users are able to complete the form to customize their pizza by choosing a size, sauce amount, and desired toppings. When they click the "calculate total" button, their full selections are displayed back to them as well as the total cost of their pizza.
 
-[Click here](https://eluckie.github.io/pizza-parlor/) to view the live version of this Pizza Parlor webpage.
+[Click here](https://eluckie.github.io/people-pizza-parlor/) to view the live version of this People Pizza Parlor webpage.
 
 ## Test-Driven Development Tests
 Describe Pizza();
@@ -99,7 +99,8 @@ Expeected Output: 17
 
 ## Known Bugs
 
-* No known bugs.
+* When window is resized too small, it cuts off part of pizza size photos that show the base price
+* When ordering multiple pizzas, it does not add the total prices together for a grand total
 
 ## License
 
