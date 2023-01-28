@@ -10,8 +10,44 @@ img {
 h1 {
   font-family:chalkduster;
   font-size:70px;
+  background-image:url("https://media.istockphoto.com/id/493316308/photo/splattered-blood-drops-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=3oWdOkNauhwInn2fcliuQX6cFE60r3nSkdZdP9zBoK4=");
 }
 
 h3 {
   color:red;
+}
+
+body {
+  font-family:chalkduster;
+}
+
+form {
+  background-image:url("https://media.istockphoto.com/id/493112318/photo/scary-zombie-hand-with-dirty-fingers-isolated-on-white.jpg?s=612x612&w=0&k=20&c=rug6zd4qkCf-4NNEwuNASRUW_i7wtWPlV1NwxWj53K8=");
+  background-position: right;
+  background-repeat: no-repeat;
+}
+
+#size-label {
+  color:darkred;
+  font-weight:bold;
+}
+
+#blood-label {
+  color:darkred;
+  font-weight:bold;
+}
+
+#toppings-label {
+  color:darkred;
+  font-weight:bold;
+}
+
+#meats-label {
+  color:red;
+  font-weight:bold;
+}
+
+#non-meats-label {
+  color:red;
+  font-weight:bold;
 }

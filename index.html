@@ -12,9 +12,8 @@
   <img src="img/adult-size.png" alt="empty red circle icon that says adult - 14 inches, $20">
   <img src="img/grandparent-size.png" alt="empty red circle icon that says grandparents - 16 inches, $25">
   <h3>Choose your size and customize your pizza below</h3>
-  <br>
   <form id="customize-pizza">
-    <label>Size: </label>
+    <label id="size-label">Size: </label>
     <select id="size"> 
       <option value="Child">Child - 10"</option>
       <option value="Teenager">Teenager - 12"</option>
@@ -22,15 +21,15 @@
       <option value="Grandparents">Grandparents - 16"</option>
     </select>
     <br><br>
-    <label>Blood: </label>
+    <label id="blood-label">Blood: </label>
     <select id="sauce"> 
       <option value="None">No blood</option>
       <option value="Light">Light blood</option>
       <option value="Regular">Regular bloody</option>
       <option value="Extra">Extra bloody</option>
     </select>
-    <h4>Toppings (+$2 per topping):</h4>
-    <p>Meats</p>
+    <h4 id="toppings-label">Toppings (+$2 per topping):</h4>
+    <p id="meats-label">Meats</p>
     <label>
       <input type="checkbox" name="topping-option" value="Fingers">
       Fingers
@@ -46,8 +45,8 @@
     </label><br>
     <input type="checkbox" name="topping-option" value="Buttcheeks">
       Buttcheeks
-    </label><br>
-    <p>Non-meats</p>
+    </label>
+    <p id="non-meats-label">Non-meats</p>
     <input type="checkbox" name="topping-option" value="Eyeballs">
       Eyeballs
     </label><br>
@@ -62,7 +61,8 @@
     </label><br>
     <input type="checkbox" name="topping-option" value="Foot Shavings">
       Foot Shavings
-    </label><br><br>
+    </label>
+    <br><br>
     <button type="submit">Calculate Total</button>
     <button type="button" id="reset-button">Start Over</button>
   </form>
