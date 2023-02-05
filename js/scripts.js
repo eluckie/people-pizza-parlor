@@ -50,8 +50,8 @@ Pizza.prototype.addToppings = function(topping) {
   if (!topping) {
     this.toppingsCost = 0;
   } else { 
-  this.toppings.push(topping);
-  this.toppingsCost += 2;
+    this.toppings.push(topping);
+    this.toppingsCost += 2;
   }
   return this.toppingsCost;
 };
