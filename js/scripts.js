@@ -1,11 +1,14 @@
 function ShoppingCart() {
   this.pizzas = {};
+  this.grandTotal = 0;
   this.currentId = 0;
 }
 
 ShoppingCart.prototype.addToCart = function(pizza) {
   pizza.id = this.assignId();
   this.pizzas[pizza.id] = pizza;
+  const pizzaPrice = pizza.pizzaTotal;
+  this.grandTotal += pizzaPrice;
 };
 
 ShoppingCart.prototype.assignId = function() {
@@ -27,6 +30,7 @@ function Pizza() {
   this.sauce = undefined;
   this.toppings = [];
   this.toppingsCost = 0;
+  this.pizzaTotal = 0;
 }
 
 Pizza.prototype.chooseSize = function(sizeChoice) {
@@ -52,14 +56,15 @@ Pizza.prototype.addToppings = function(topping) {
 };
 
 Pizza.prototype.calculateTotalCost = function() {
-  let total = this.sizePrice + this.toppingsCost
-  return total;
+  let total = this.sizePrice + this.toppingsCost;
+  this.pizzaTotal = parseInt(total);
+  return this.pizzaTotal;
 };
 
 // global cart object to hold pizzas
 const cart = new ShoppingCart();
 
-function calculatePizzaCost() {
+function displayPizzaCost() {
   const pizza = new Pizza();
   const size = document.getElementById("size").value;
   const sauce = document.getElementById("blood").value;
@@ -78,8 +83,8 @@ function calculatePizzaCost() {
   const displayTotal = document.createElement("h3");
   const yourSize = document.createElement("p");
   const yourSauce = document.createElement("p");
-  const total = pizza.calculateTotalCost();
   const addToCartButton = document.getElementById("add-to-cart");
+  const total = pizza.calculateTotalCost();
 
   yourSize.append("Size: " + pizza.size);
   yourSauce.append("Blood: " + pizza.sauce);
@@ -93,6 +98,7 @@ function calculatePizzaCost() {
   addToCartButton.removeAttribute("class");
 }
 
+// need to DRY once cart is functioning properly
 function addPizzaToCart() {
   const pizza = new Pizza();
   const size = document.getElementById("size").value;
@@ -106,11 +112,22 @@ function addPizzaToCart() {
   toppingSelectionsArray.forEach(function(topping) {
     pizza.addToppings(topping);
     yourToppings.append(topping.value + ". ");
+    const total = pizza.calculateTotalCost();
   });
-  const total = pizza.calculateTotalCost();
+
   cart.addToCart(pizza);
-  resetSelections();
-  console.log(cart);
+
+  const cartTotal = cart.grandTotal;
+  const shoppingCart = document.getElementById("shopping-cart");
+  const grandTotalDisplay = document.createElement("p");
+  shoppingCart.innerText = null;
+  grandTotalDisplay.append("Your total is $" + cartTotal);
+  shoppingCart.append(grandTotalDisplay);
+  shoppingCart.removeAttribute("class");
+  document.getElementById("customize-pizza").reset();
+  document.getElementById("your-pizza").innerText = "";
+  document.getElementById("your-pizza").setAttribute("class", "hidden");
+  document.getElementById("add-to-cart").setAttribute("class", "hidden");
 }
 
 function resetSelections() {
@@ -118,10 +135,11 @@ function resetSelections() {
   document.getElementById("your-pizza").innerText = "";
   document.getElementById("your-pizza").setAttribute("class", "hidden");
   document.getElementById("add-to-cart").setAttribute("class", "hidden");
+  document.getElementById("shopping-cart").setAttribute("class", "hidden");
 }
 
 window.addEventListener("load", function() {
-document.getElementById("calculate-button").addEventListener("click", calculatePizzaCost);
+document.getElementById("calculate-button").addEventListener("click", displayPizzaCost);
 document.getElementById("reset-button").addEventListener("click", resetSelections);
 document.getElementById("add-to-cart-button").addEventListener("click", addPizzaToCart);
 });
