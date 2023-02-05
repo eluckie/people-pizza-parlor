@@ -134,11 +134,12 @@ ShoppingCart { pizzas: {} }
 
 * Clone this repository to your desktop
 * Navigate to the top level of this directory
-* Open pizza-parlor/index.html in your web browser
+* Open people-pizza-parlor-cart/index.html in your web browser
 
 ## Known Bugs
 
 * When window is resized too small, it cuts off part of pizza size photos that show the base price
+* If you don't add any toppings, it will display the correct price for the single pizza and add it to the cart, but it does not update the cart's grand total or the pizza's total itself.
 
 ## License
 

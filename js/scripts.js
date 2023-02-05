@@ -24,10 +24,10 @@ ShoppingCart.prototype.deletePizza = function(id) {
   return true;
 }
 
-function Pizza() {
+function Pizza(sauceChoice) {
   this.size = undefined;
   this.sizePrice = 0;
-  this.sauce = undefined;
+  this.sauce = sauceChoice;
   this.toppings = [];
   this.toppingsCost = 0;
   this.pizzaTotal = 0;
@@ -46,30 +46,29 @@ Pizza.prototype.chooseSize = function(sizeChoice) {
   }
 };
 
-Pizza.prototype.addSauce = function(sauceChoice) {
-  this.sauce = sauceChoice;
-};
-
 Pizza.prototype.addToppings = function(topping) {
+  if (!topping) {
+    this.toppingsCost = 0;
+  } else { 
   this.toppings.push(topping);
   this.toppingsCost += 2;
+  }
+  return this.toppingsCost;
 };
 
 Pizza.prototype.calculateTotalCost = function() {
-  let total = this.sizePrice + this.toppingsCost;
-  this.pizzaTotal = parseInt(total);
+  let total = parseInt(this.sizePrice + this.toppingsCost);
+  this.pizzaTotal = total;
   return this.pizzaTotal;
 };
 
 const cart = new ShoppingCart();
 
 function displayPizzaCost() {
-  const pizza = new Pizza();
   const size = document.getElementById("size").value;
   const sauce = document.getElementById("blood").value;
+  const pizza = new Pizza(sauce);
   pizza.chooseSize(size);
-  pizza.addSauce(sauce);
-
   const toppingSelections = document.querySelectorAll("input[name=topping-option]:checked");
   const toppingSelectionsArray = Array.from(toppingSelections);
   const yourToppings = document.createElement("p");
@@ -84,7 +83,6 @@ function displayPizzaCost() {
   const yourSauce = document.createElement("p");
   const addToCartButton = document.getElementById("add-to-cart");
   const total = pizza.calculateTotalCost();
-
   yourSize.append("Size: " + pizza.size);
   yourSauce.append("Blood: " + pizza.sauce);
   yourToppings.prepend("Toppings: ");
@@ -99,12 +97,10 @@ function displayPizzaCost() {
 
 // need to DRY once cart is functioning properly
 function addPizzaToCart() {
-  const pizza = new Pizza();
   const size = document.getElementById("size").value;
   const sauce = document.getElementById("blood").value;
+  const pizza = new Pizza(sauce);
   pizza.chooseSize(size);
-  pizza.addSauce(sauce);
-
   const toppingSelections = document.querySelectorAll("input[name=topping-option]:checked");
   const toppingSelectionsArray = Array.from(toppingSelections);
   const yourToppings = document.createElement("p");
@@ -115,7 +111,6 @@ function addPizzaToCart() {
   });
 
   cart.addToCart(pizza);
-
   const cartTotal = cart.grandTotal;
   const shoppingCart = document.getElementById("shopping-cart");
   const grandTotalDisplay = document.createElement("p");
@@ -127,6 +122,8 @@ function addPizzaToCart() {
   document.getElementById("your-pizza").innerText = "";
   document.getElementById("your-pizza").setAttribute("class", "hidden");
   document.getElementById("add-to-cart").setAttribute("class", "hidden");
+
+  console.log(cart);
 }
 
 function resetSelections() {
