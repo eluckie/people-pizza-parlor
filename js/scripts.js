@@ -61,7 +61,6 @@ Pizza.prototype.calculateTotalCost = function() {
   return this.pizzaTotal;
 };
 
-// global cart object to hold pizzas
 const cart = new ShoppingCart();
 
 function displayPizzaCost() {
