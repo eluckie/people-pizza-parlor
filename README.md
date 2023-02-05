@@ -139,7 +139,6 @@ ShoppingCart { pizzas: {} }
 ## Known Bugs
 
 * When window is resized too small, it cuts off part of pizza size photos that show the base price
-* Grand total does not clear when using the "start over" button
 
 ## License
 
