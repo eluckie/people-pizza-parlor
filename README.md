@@ -91,6 +91,45 @@ myPizza.addToppings("pepperoni");
 myPizza.calculateTotalCost();
 Expeected Output: 17
 
+Describe ShoppingCart()
+
+Test 1: "It should return an empty shopping cart object"
+Code: const myCart = new ShoppingCart();
+Expected Output:
+ShoppingCart { }
+
+Describe ShoppingCart.prototype.addToCart()
+
+Test 1: "It should add the specified pizza object to the shopping cart object"
+Code:
+const myPizza = new Pizza();
+const myCart = new ShoppingCart();
+myCart.addToCart(myPizza);
+Expected Output:
+ShoppingCart { pizzas: { size: myPizza } }
+
+Describe ShoppingCart.prototype.assignId()
+
+Test 1: "It should assign a unique ID to each pizza object that is added to the shopping cart object"
+Code:
+const myPizza = new Pizza();
+const myCart = new ShoppingCart();
+myCart.addToCart(myPizza);
+Expected Output:
+ShoppingCart { pizzas: { ID: myPizza } }
+
+Describe ShoppingCart.prototype.deletePizza()
+
+Test 1: "It should delete the specified pizza object from the shopping cart object"
+Code:
+const myPizza = new Pizza();
+const myCart = new ShoppingCart();
+myCart.addToCart(myPizza);
+myCart.deletePizza(1);
+Expected Output:
+ShoppingCart { pizzas: {} }
+
+
 ## Setup/Installation Requirements
 
 * Clone this repository to your desktop
